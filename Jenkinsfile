@@ -12,7 +12,7 @@ pipeline{
                 sh '''
                 python3 --version
                 node --version
-                newman --version
+                npm install newman
                 '''
             }
         }
