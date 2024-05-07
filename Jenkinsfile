@@ -11,7 +11,6 @@ pipeline{
             steps{
                 sh '''
                 python3 --version
-                robot --version
                 node --version
                 npm install newman
                 '''
@@ -20,7 +19,7 @@ pipeline{
         stage('Test'){
             steps{
                 sh '''
-                robot ./Test1.robot
+                python ./testCh_report1.py
                 '''
             }
         }
