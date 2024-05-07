@@ -1,36 +1,22 @@
-pipeline {
-    agent { 
-        node {
-            label 'docker-agent-python'
-            }
-      }
-      triggers {
-        pollSCM '* * * * *'
+pipeline{
+    agent any
+    tools{
+        nodejs '22.1.0'
     }
-    stages {
-        stage('Build') {
-            steps {
-                echo "Building.."
+    stages{
+        stage('Build'){
+            steps{
                 sh '''
-                echo "doing build stuff..
+                python3 --version
                 node --version
-                newman --version"
+                npm install newman
                 '''
             }
         }
-        stage('Test') {
-            steps {
-                echo "Testing.."
+        stage('Test'){
+            steps{
                 sh '''
-                echo "doing test stuff.."
-                '''
-            }
-        }
-        stage('Deliver') {
-            steps {
-                echo 'Deliver....'
-                sh '''
-                echo "doing delivery stuff.."
+                
                 '''
             }
         }
