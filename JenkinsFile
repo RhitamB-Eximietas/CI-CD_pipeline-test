@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    triggers {
+        pollSCM '* * * * *'
+    }
     tools{
         nodejs '22.1.0'
     }
@@ -8,6 +11,8 @@ pipeline{
             steps{
                 sh '''
                 python3 --version
+                pip install robotframework
+                robot --version
                 node --version
                 npm install newman
                 '''
@@ -16,7 +21,7 @@ pipeline{
         stage('Test'){
             steps{
                 sh '''
-                
+                robot ./Test1.robot
                 '''
             }
         }
