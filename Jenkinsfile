@@ -12,14 +12,14 @@ pipeline{
                 sh '''
                 python3 --version
                 node --version
-                npm install newman
+                newman --version
                 '''
             }
         }
         stage('Test'){
             steps{
                 sh '''
-                python3 ./testCh_report1.py
+                newman run API\FakeRESTApi.Web V1.postman_collection.json -e API\FakeRestAPI.postman_environment.json --reporters cli,htmlextra --reporter-htmlextra-export Reports\HTML\report.html
                 '''
             }
         }
