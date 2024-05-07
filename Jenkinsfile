@@ -11,7 +11,6 @@ pipeline{
             steps{
                 sh '''
                 python3 --version
-                pip install robotframework
                 robot --version
                 node --version
                 npm install newman
