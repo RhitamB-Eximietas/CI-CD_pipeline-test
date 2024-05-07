@@ -19,7 +19,7 @@ pipeline{
         stage('Test'){
             steps{
                 sh '''
-                py ./testCh_report1.py
+                python3 ./testCh_report1.py
                 '''
             }
         }
