@@ -4,7 +4,7 @@ def run_newman(collection_path,environment_path):
     json_report_path = 'Reports\\JSON\\report.json'
     html_report_path = 'Reports\\HTML\\report.html'
     command = [
-        'C:\\Users\\RHITAM BHATTACHARYA\\AppData\\Roaming\\npm\\newman.cmd',
+        # 'C:\\Users\\RHITAM BHATTACHARYA\\AppData\\Roaming\\npm\\newman.cmd',
         'run', collection_path,
         '-e', environment_path,
         '--reporters', 'json,htmlextra', 
