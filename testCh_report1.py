@@ -1,8 +1,8 @@
 import subprocess 
 
 def run_newman(collection_path,environment_path):
-    json_report_path = 'POC_Robot_Newman\\JSON\\report.json'
-    html_report_path = 'POC_Robot_Newman\\HTML\\report.html'
+    json_report_path = 'Reports\\JSON\\report.json'
+    html_report_path = 'Reports\\HTML\\report.html'
     command = [
         'C:\\Users\\RHITAM BHATTACHARYA\\AppData\\Roaming\\npm\\newman.cmd',
         'run', collection_path,
